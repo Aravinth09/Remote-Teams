@@ -1,0 +1,260 @@
+/* General Layout */
+.App {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Center Content */
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Login Form */
+.login-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+.notification {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+}
+
+.notification.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Task Management Form */
+form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input,
+select {
+  margin: 0 10px 10px 0;
+  padding: 10px;
+  width: calc(30% - 20px);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+/* Description Input (Make it bigger) */
+textarea {
+  margin: 0 10px 10px 0;
+  padding: 10px;
+  width: calc(70% - 20px); /* Adjusted width for Description */
+  height: 100px; /* Height adjustment for bigger text area */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px 5px 10px 0;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.add-task {
+  background-color: #28a745;
+}
+
+button.add-task:hover {
+  background-color: #218838;
+}
+
+button.delete-task {
+  background-color: #dc3545;
+}
+
+button.delete-task:hover {
+  background-color: #c82333;
+}
+
+/* Task List Styling */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-item span {
+  font-weight: bold;
+}
+
+.task-item .priority {
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.task-item .priority.low {
+  color: green;
+}
+
+.task-item .priority.medium {
+  color: blue;
+}
+
+.task-item .priority.high {
+  color: red;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Task Status Badges */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+  color: white;
+  margin-left: 10px;
+}
+
+.badge.in-progress {
+  background-color: #ffc107;
+}
+
+.badge.completed {
+  background-color: #28a745;
+}
+
+.badge.pending {
+  background-color: #007bff;
+}
+
+/* Task Filters */
+.task-filters {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.task-filters input {
+  width: calc(40% - 10px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.task-filters input:focus {
+  border-color: #007bff;
+}
+
+.task-filters select {
+  width: calc(30% - 10px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.task-filters select:focus {
+  border-color: #007bff;
+}
+
+/* Hover & Focus States */
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task-filters, form {
+      flex-direction: column;
+  }
+
+  input, select, button {
+      width: 100%;
+      margin: 10px 0;
+  }
+}
